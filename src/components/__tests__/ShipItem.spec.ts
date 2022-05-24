@@ -1,11 +1,11 @@
 import { describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
-import ShipCard from "../ShipCard.vue";
+import ShipItem from "../ShipItem.vue";
 
-describe("ShipCard", () => {
+describe("ShipItem", () => {
   it("renders properly", () => {
-    const wrapper = mount(ShipCard, { props: { msg: "Hello Test" } });
+    const wrapper = mount(ShipItem, { props: { name: "Hello Test" } });
     expect(wrapper.text()).toContain("Hello Test");
   });
 });

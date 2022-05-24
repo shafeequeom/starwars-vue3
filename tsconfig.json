@@ -1,5 +1,18 @@
 {
   "files": [],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "importsNotUsedAsValues": "remove",
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vite/client"]
+  },
   "references": [
     {
       "path": "./tsconfig.vite-config.json"
