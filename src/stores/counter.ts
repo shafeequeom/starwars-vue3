@@ -1,16 +1,16 @@
 import { defineStore } from "pinia";
 
 export const useCounterStore = defineStore({
-  id: "counter",
+  id: "mode",
   state: () => ({
-    counter: 0,
+    mode: 'dark',
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2,
+    mode: (state) => state.mode,
   },
   actions: {
-    increment() {
-      this.counter++;
+    switch() {
+      this.mode = this.mode == 'light' ? 'dark' : 'light';
     },
   },
 });

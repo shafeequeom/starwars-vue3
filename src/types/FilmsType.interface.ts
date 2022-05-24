@@ -1,23 +1,23 @@
-export interface FilmTypes {
+export interface ListFilmTypes {
     count: Number,
-    next: null | String,
-    previous: null | String,
-    results?: Result[];
+    next: null | string,
+    previous: null | string,
+    results?: FilmTypes[];
 }
 
-export interface Result {
-    title: String,
+export interface FilmTypes {
+    title: string,
     episode_id: Number,
-    opening_crawl: String,
-    director: String,
-    producer: String,
-    release_date: String,
+    opening_crawl: string,
+    director: string,
+    producer: string,
+    release_date: string,
     species: Array<any>,
     starships: Array<any>,
     vehicles: Array<any>,
     characters: Array<any>,
     planets: Array<any>,
-    url: String,
-    created: String,
-    edited: String,
+    url: string,
+    created: string,
+    edited: string,
 }

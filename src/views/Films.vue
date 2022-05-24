@@ -2,7 +2,7 @@
 import { defineComponent, reactive, ref, toRefs, onMounted } from "vue";
 import { listFilms } from "../services/film";
 import FilmItem from "@/components/FilmItem.vue";
-import type { FilmTypes } from "@/types/FilmsType.interface";
+import type { ListFilmTypes } from "@/types/FilmsType.interface";
 
 export default defineComponent({
   name: "Film",
@@ -10,7 +10,7 @@ export default defineComponent({
     FilmItem,
   },
   setup() {
-    let films: FilmTypes = reactive({ count: 0, next: null, previous: null, results: [] });
+    let films: ListFilmTypes = reactive({ count: 0, next: null, previous: null, results: [] });
     let data = ref<Number>(0)
 
     const getFilms = async (): Promise<void> => {
@@ -28,14 +28,13 @@ export default defineComponent({
 </script>
 
 <template>
-  <main>
-    <h1>This is film page</h1>
-    <div v-if="results">
-      <template v-for="(film, index) in results" :key="index">
-        <FilmItem :title="film.title"></FilmItem>
-      </template>
-    </div>
-  </main>
+
+  <div v-if="results">
+    <ul v-for="(film, index) in results" :key="index">
+      <FilmItem :title="film.title"></FilmItem>
+    </ul>
+  </div>
+
 </template>
 
 <style>

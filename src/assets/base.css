@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Star Jedi';
+  src: url('./Starjedi.ttf');
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica;
+}
+
+.logo{
+    font-family: 'Star Jedi', arial;
+}
+
+nav{
+    display: inline;
+    font-family: 'Star Jedi', arial;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
