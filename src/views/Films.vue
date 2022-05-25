@@ -11,7 +11,6 @@ export default defineComponent({
   },
   setup() {
     let films: ListFilmTypes = reactive({ count: 0, next: null, previous: null, results: [] });
-    let data = ref<Number>(0)
 
     const getFilms = async (): Promise<void> => {
       let data = await listFilms();
@@ -22,17 +21,20 @@ export default defineComponent({
       getFilms();
     });
 
-    return { data, ...toRefs(films) };
+    return { ...toRefs(films) };
   },
 });
 </script>
 
 <template>
 
-  <div v-if="results">
-    <ul v-for="(film, index) in results" :key="index">
-      <FilmItem :title="film.title"></FilmItem>
+  <div v-if="results?.length">
+    <ul>
+      <FilmItem v-for="(film, index) in results" :key="index" v-bind="film"></FilmItem>
     </ul>
+  </div>
+  <div v-else>
+    <h1 class="text-center">Loading...</h1>
   </div>
 
 </template>

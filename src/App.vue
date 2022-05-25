@@ -1,63 +1,72 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { useModeStore } from "./stores/mode";
+import { storeToRefs, mapActions } from "pinia";
+import { onMounted } from "vue";
+const store = useModeStore()
+
+const { theme } = storeToRefs(store);
+
+onMounted(() => {
+  document.body.className = 'light';
+})
+
+const { switchTheme } = mapActions(useModeStore, ['switchTheme'])
+
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <RouterLink to="/">
-        <div class="logo"> Starwar</div>
-      </RouterLink>
-      <nav>
-        <RouterLink to="/">Films</RouterLink>
-        <RouterLink to="/starships">Starships</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <div :class="theme">
+    <header>
+      <div class="wrapper">
+        <RouterLink to="/">
+          <div class="logo"> Starwar</div>
+        </RouterLink>
+        <nav>
+          <RouterLink to="/">Films</RouterLink>
+          <RouterLink to="/starships">Starships</RouterLink>
 
-  <main>
-    <RouterView />
-  </main>
+          <a class="mode-toggle" @click="switchTheme">
+            <Transition name="slide-up">
+              <svg v-if="theme === 'dark'" xmlns="http://www.w3.org/2000/svg" class="icon fill-current" fill="#fff"
+                viewBox="0 0 24 24" height="30px" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              <svg v-else-if="theme === 'light'" xmlns=" http://www.w3.org/2000/svg" class="icon" fill="#222"
+                viewBox="0 0 24 24" height="30px" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </Transition>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <RouterView />
+    </main>
+  </div>
 
 </template>
 
 <style>
 @import "@/assets/base.css";
 
-.wrapper {
-  display: flex;
-  justify-content: space-around;
-  font-size: 30px;
-  border: 1px #000 solid;
-  margin-top: 20px;
+.mode-toggle {
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 
-.logo {
-  color: #FFE81F;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+.mode-toggle svg {
+  position: relative;
 }
 
-a {
-  text-decoration: none;
-}
-
-nav a {
-  margin: 30px 10px;
-  padding: 30 20px;
-  background-color: #ccc;
-  color: black;
-}
-
-nav a:hover {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.335), 0 0 15px rgba(0, 0, 255, 0.329), 0 0 5px rgba(0, 0, 139, 0.318);
-}
-
-main {
-  padding: 40px;
-  width: 70%;
-  margin: 0 auto;
-  border: 1px #000 solid;
+.mode-toggle:hover {
+  opacity: 0.9;
 }
 </style>
