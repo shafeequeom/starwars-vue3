@@ -1,6 +1,8 @@
-# Starwars SWAPI Implementation
+# Starwars Vue- SWAPI Implementation
 
-Startwar API Implementation using Vue3 Composition API + Typescript
+Startwars API Implementation using Vue3 Composition API + Typescript
+
+### Features
 
 - Film Listing
 - Starships Listing with pagination
@@ -10,10 +12,6 @@ Startwar API Implementation using Vue3 Composition API + Typescript
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
