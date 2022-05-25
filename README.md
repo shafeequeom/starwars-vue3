@@ -40,3 +40,10 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Screenshots
+
+![Film Dark](https://github.com/shafeequeom/starwars-vue3/blob/main/screenshots/films-dark.png)
+![Film Light](https://github.com/shafeequeom/starwars-vue3/blob/main/screenshots/films-light.png)
+![Starship Dark](https://github.com/shafeequeom/starwars-vue3/blob/main/screenshots/starships-dark.png)
+![Starships Light](https://github.com/shafeequeom/starwars-vue3/blob/main/screenshots/starships-light.png)
