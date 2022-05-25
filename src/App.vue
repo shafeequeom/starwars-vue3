@@ -23,7 +23,7 @@ const switchTheme = () => {
     <header>
       <div class="wrapper">
         <RouterLink to="/">
-          <div class="logo"> Starwar</div>
+          <div class="logo"> Starwars</div>
         </RouterLink>
         <nav>
           <RouterLink to="/">Films</RouterLink>
