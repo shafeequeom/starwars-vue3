@@ -11,7 +11,10 @@ onMounted(() => {
   document.body.className = 'light';
 })
 
-const { switchTheme } = mapActions(useModeStore, ['switchTheme'])
+// const { switchTheme } = mapActions(useModeStore, ['switchTheme'])
+const switchTheme = () => {
+  store.switchTheme()
+}
 
 </script>
 
