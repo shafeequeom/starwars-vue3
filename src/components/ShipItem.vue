@@ -104,4 +104,16 @@ const numberFormat = (data: string): string => {
   font-weight: 800;
   opacity: 1;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+  .details {
+    text-align: center;
+  }
+
+  .ship-stats {
+    grid-template-columns: auto auto;
+  }
+}
 </style>
